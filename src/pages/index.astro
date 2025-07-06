@@ -1,26 +1,257 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import { Image } from "astro:assets";
+import Logo from "../assets/logo.png";
+import Bookshelf from "../assets/bookshelf.png";
+import Cafe from "../assets/cafe.png";
+import Book from "../assets/book.png";
+import Cake from "../assets/cake.png";
+import Community from "../assets/community.png";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+<Layout title="栞とショートケーキ - Book & Cake">
+	<!-- Hero Section -->
+	<section
+		class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#fefdf9]"
+	>
+		<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid lg:grid-cols-2 gap-12 items-center">
+				<!-- Text Content -->
+				<div class="text-center lg:text-left space-y-8">
+					<div class="space-y-6 animate-fade-in">
+						<h1
+							class="text-5xl lg:text-7xl font-serif font-bold leading-tight"
+						>
+							<span class="block gradient-text"
+								>物語を味わう、</span
+							>
+							<span class="block gradient-text"
+								>人生を味わう。</span
+							>
+						</h1>
+						<p
+							class="text-xl lg:text-2xl text-warm-600 leading-relaxed max-w-2xl font-serif"
+						>
+							一冊の本が新しい世界への扉を開き、<br
+								class="hidden lg:block"
+							/>
+							一口のケーキが日常に彩りと癒やしを与える。<br
+								class="hidden lg:block"
+							/>
+							ここは、本とケーキが織りなす特別な空間。
+						</p>
+					</div>
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-			<h1 class="to-warm-500 from-sage-500 bg-clip-text text-transparent bg-gradient-to-r">Hello World</h1>
+					<div
+						class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up"
+					>
+						<a
+							href="/about"
+							class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-warm-500 to-warm-400 text-white font-semibold rounded-full hover:from-warm-600 hover:to-warm-500 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-warm-400/30 focus-ring"
+						>
+							コンセプトを知る
+							<svg
+								class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+							</svg>
+						</a>
+						<a
+							href="/cafe"
+							class="group inline-flex items-center px-8 py-4 border-2 border-warm-500 text-warm-600 font-semibold rounded-full hover:bg-warm-500 hover:text-white transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-warm-400/20 focus-ring"
+						>
+							メニューを見る
+							<svg
+								class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- Hero Image -->
+				<div class="relative">
+					<div class="relative animate-scale-in">
+						<!-- Main image placeholder -->
+						<div class="relative overflow-hidden hover-lift">
+							<Image
+								src={Logo}
+								alt="ロゴ"
+								class="w-full h-full object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</body>
-</html>
+
+		<!-- Scroll indicator -->
+		<div
+			class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+		>
+			<svg
+				class="w-6 h-6 text-warm-500"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+			</svg>
+		</div>
+	</section>
+
+	<!-- About Preview Section -->
+	<section class="py-24 bg-[#fefdf9]">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid lg:grid-cols-2 gap-16 items-center">
+				<div class="space-y-8 animate-fade-in">
+					<div class="space-y-6">
+						<h2
+							class="text-4xl lg:text-5xl font-serif font-bold gradient-text"
+						>
+							私たちについて
+						</h2>
+						<div class="space-y-4">
+							<p
+								class="text-lg text-warm-700 leading-relaxed font-medium"
+							>
+								Book &
+								Cake「栞とショートケーキ」は、本とカフェが融合した、新しい文化空間です。
+							</p>
+							<p class="text-lg text-warm-600 leading-relaxed">
+								専門のブックコンシェルジュが選び抜いた本と、専属パティシエが創る物語から生まれたケーキで、
+								お客様の五感を満たす特別な読書体験を提供します。
+							</p>
+							<p class="text-base text-warm-600 leading-relaxed">
+								ここは、ただ本を読んでケーキを食べる場所ではありません。人と人が出会い、感性が交差し、
+								新しい物語が生まれる場所。お客様一人ひとりの「お気に入りの場所」となることを目指しています。
+							</p>
+						</div>
+					</div>
+
+					<a
+						href="/about"
+						class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-warm-500 to-warm-400 text-white font-semibold rounded-full hover:from-warm-600 hover:to-warm-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-warm-400/30 focus-ring"
+					>
+						詳しく見る
+						<svg
+							class="ml-2 w-4 h-4"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+						</svg>
+					</a>
+				</div>
+
+				<div class="grid grid-cols-2 gap-6 animate-slide-up">
+					<!-- Image placeholders -->
+					<div class="space-y-6">
+						<div
+							class="aspect-[4/5] rounded-2xl shadow-lg hover-lift flex items-center justify-center"
+						>
+							<Image
+								src={Bookshelf}
+								alt="書店のイメージ"
+								class="w-full h-full object-cover rounded-2xl"
+							/>
+						</div>
+					</div>
+					<div class="space-y-6 pt-8">
+						<div
+							class="aspect-[4/5] bg-gradient-to-br from-warm-200 to-sage-200 rounded-2xl shadow-lg hover-lift flex items-center justify-center"
+						>
+							<Image
+								src={Cafe}
+								alt="カフェのイメージ"
+								class="w-full h-full object-cover rounded-2xl"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Features Section -->
+	<section class="py-24 bg-[#fefdf9]">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		  <div class="text-center mb-16">
+			<h2 class="text-4xl lg:text-5xl font-serif font-bold gradient-text mb-6">
+			  栞とショートケーキの特色
+			</h2>
+			<p class="text-xl text-warm-600 max-w-3xl mx-auto leading-relaxed">
+			  私たちは、本とケーキという二つの「物語」を通じて、お客様の日常に豊かな時間と新しい発見をお届けします。
+			</p>
+		  </div>
+	
+		  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<!-- Feature 1 -->
+			<div class="group glass p-8 rounded-2xl text-center hover-lift shadow-lg border border-warm-100/50 animate-fade-in">
+			  <div class="w-auto h-64 mx-auto mb-6 bg-gradient-to-br from-warm-500 to-warm-400 rounded-2xl flex items-center justify-center group-hover:shadow-warm-400/30 transition-shadow duration-300">
+				<Image src={Book} alt="本" class="w-full h-full object-cover rounded-2xl" />
+			  </div>
+			  <h3 class="text-xl font-serif font-semibold text-warm-800 mb-4">
+				厳選された書籍
+			  </h3>
+			  <p class="text-warm-600 leading-relaxed">
+				専門のブックコンシェルジュが心を込めて選んだ約5,000冊の本。<br />
+				小説、エッセイ、詩集、アートブックまで、人生の道標となる一冊をご提案します。
+			  </p>
+			</div>
+	
+			<!-- Feature 2 -->
+			<div class="group glass p-8 rounded-2xl text-center hover-lift shadow-lg border border-warm-100/50 animate-slide-up">
+			  <div class="w-auto h-64 mx-auto mb-6 bg-gradient-to-br from-sage-500 to-sage-400 rounded-2xl flex items-center justify-center group-hover:shadow-sage-400/30 transition-shadow duration-300">
+				<Image src={Cake} alt="ケーキのイメージ" class="w-full h-full object-cover rounded-2xl" />
+			  </div>
+			  <h3 class="text-xl font-serif font-semibold text-warm-800 mb-4">
+				物語から生まれたケーキ
+			  </h3>
+			  <p class="text-warm-600 leading-relaxed">
+				専属パティシエが文学作品からインスピレーションを得て作る、ここでしか味わえないオリジナルケーキ。季節の食材と物語が織りなす特別な味わいです。
+			  </p>
+			</div>
+	
+			<!-- Feature 3 -->
+			<div class="group glass p-8 rounded-2xl text-center hover-lift shadow-lg border border-warm-100/50 md:col-span-2 lg:col-span-1 animate-scale-in">
+			  <div class="w-auto h-64 mx-auto mb-6 bg-gradient-to-br from-warm-600 to-sage-500 rounded-2xl flex items-center justify-center group-hover:shadow-warm-500/30 transition-shadow duration-300">
+				<Image src={Community} alt="コミュニティ" class="w-full h-full object-cover rounded-2xl" />
+			  </div>
+			  <h3 class="text-xl font-serif font-semibold text-warm-800 mb-4">
+				コミュニティの場
+			  </h3>
+			  <p class="text-warm-600 leading-relaxed">
+				読書会、著者トークショー、ワークショップなど、本を愛する人々が集まる文化的なイベントを定期的に開催しています。
+			  </p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+</Layout>
